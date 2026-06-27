@@ -1,0 +1,34 @@
+{
+  "name": "yksajans-desktop",
+  "version": "1.0.0",
+  "description": "YKS Ajans Masaüstü Uygulaması",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.yksajans.desktop",
+    "productName": "YKS Ajans",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "YKS Ajans"
+    },
+    "files": [
+      "main.js",
+      "package.json"
+    ],
+    "publish": {
+      "provider": "github"
+    }
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  }
+}
